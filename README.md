@@ -9,6 +9,8 @@
 A util package to use Vue 2 with Composition API easily.
 This fork supports [Vuetify2](https://vuetifyjs.com/).
 
+[@vue/composition-api](https://github.com/vuejs/composition-api) is required separately when using under Vue 2.7.
+
 ## ⬇️ Install
 
 ```sh
@@ -25,7 +27,7 @@ yarn add -D @logue/vue2-helpers
 
 ```javascript
 import { createVuexHelpers } from '@logue/vue2-helpers';
-import { useRouter } from '@logue/vue2-helpers/vue-router';
+import { useRouter } from 'vue-router/composable';
 
 const { useState } = createVuexHelpers<
     RootState, RootGetters, RootMutations, RootActions
@@ -41,33 +43,33 @@ router.push('/login');
 
 ### vue2-helpers
 
-| Features                                                                                                                                                                                                  | Description                                                                                                         |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `createVuexHelpers`&lt;<br>&nbsp;&nbsp;&nbsp;&nbsp;RootState, RootGetters, RootMutations, RootActions<br>&gt;(): {<br>&nbsp;&nbsp;&nbsp;&nbsp;`useState`, `useGetters`, `useMutations`, `useActions`<br>} | The helper methods in return value are<br>used to replace `mapState`, `mapGetters`,<br>`mapMutations`, `mapActions` |
+| Features                                                                                                                                                                                                        | Description                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `createVuexHelpers`&lt;<br />&nbsp;&nbsp;&nbsp;&nbsp;RootState, RootGetters, RootMutations, RootActions<br />&gt;(): {<br>&nbsp;&nbsp;&nbsp;&nbsp;`useState`, `useGetters`, `useMutations`, `useActions`<br />} | The helper methods in return value are<br />used to replace `mapState`, `mapGetters`,<br />`mapMutations`, `mapActions` |
 
 ### vue2-helpers/vuex
 
-| Features                                                               | Description |
-| ---------------------------------------------------------------------- | ----------- |
-| `createStore`&lt;S&gt;(options: StoreOptions&lt;S&gt;): Store&lt;S&gt; |             |
-| `useStore`&lt;S = any&gt;(): Store&lt;S&gt;                            |
+| Features                                                               | Description              |
+| ---------------------------------------------------------------------- | ------------------------ |
+| `createStore`&lt;S&gt;(options: StoreOptions&lt;S&gt;): Store&lt;S&gt; |                          |
+| `useStore`&lt;S = any&gt;(): Store&lt;S&gt;                            | Get Vuex store instance. |
 
 ### vue2-helpers/vue-router
 
-| Features                                                  | Description |
-| --------------------------------------------------------- | ----------- |
-| `createRouter`(options: RouterOptions): Router            |             |
-| `onBeforeRouteLeave`(leaveGuard: NavigationGuard): void   |             |
-| `onBeforeRouteUpdate`(updateGuard: NavigationGuard): void |             |
-| `useRoute`(): RouteLocationNormalized                     |             |
-| `useRouter`(): Router                                     |             |
-| router.`isReady`(): Promise\<void\>                       |             |
+| Features                                                  | Description         |
+| --------------------------------------------------------- | ------------------- |
+| `createRouter`(options: RouterOptions): Router            |                     |
+| `onBeforeRouteLeave`(leaveGuard: NavigationGuard): void   |                     |
+| `onBeforeRouteUpdate`(updateGuard: NavigationGuard): void |                     |
+| `useRoute`(): RouteLocationNormalized                     | Get Route instance  |
+| `useRouter`(): Router                                     | Get Router instance |
+| router.`isReady`(): Promise\<void\>                       |                     |
 
 ### vue2-helpers/vuetify
 
-| Features                  | Description |
-| ------------------------- | ----------- |
-| `useVuetify`(): Framework |             |
+| Features                  | Description           |
+| ------------------------- | --------------------- |
+| `useVuetify`(): Framework | Get Vuetify Instance. |
 
 ## License
 
