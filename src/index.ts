@@ -1,7 +1,11 @@
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
-import { computed, getCurrentInstance, type ComputedRef } from 'vue-demi';
-import { OUT_OF_SCOPE } from './utils';
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
+/* eslint-disable no-unused-vars */
 import type Vue from 'vue';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+
+import { computed, getCurrentInstance, type ComputedRef } from 'vue-demi';
+
+import { OUT_OF_SCOPE } from './utils';
 type ActionReturnType<T extends (...args: any) => any> = Promise<
   T extends (...args: any) => Promise<infer U> ? U : ReturnType<T>
 >;
@@ -34,7 +38,7 @@ interface Helper<RMK extends ResultMapKey, RootType> {
   <K extends string, N extends string>(
     namespace: N,
     keys: K[]
-  ): HelperReturnType<RMK, K, N extends keyof RootType ? RootType[N] : {}>;
+  ): HelperReturnType<RMK, K, N extends keyof RootType ? RootType[N] : object>;
 
   <K extends string>(
     map: Record<K, string | Function>
@@ -43,7 +47,7 @@ interface Helper<RMK extends ResultMapKey, RootType> {
   <K extends string, N extends string>(
     namespace: N,
     map: Record<K, string | Function>
-  ): HelperReturnType<RMK, K, N extends keyof RootType ? RootType[N] : {}>;
+  ): HelperReturnType<RMK, K, N extends keyof RootType ? RootType[N] : object>;
 }
 
 /**
@@ -71,7 +75,7 @@ export function createVuexHelpers<
 function useState(...args: [any]): Record<string, any> {
   const states = mapState(...args);
   const result: Record<string, any> = {};
-  Object.keys(states).forEach(key => (result[key] = computed(states[key])));
+  Object.keys(states).forEach(key => (result[key] = computed(states[key]!)));
   return result;
 }
 
@@ -83,7 +87,7 @@ function useState(...args: [any]): Record<string, any> {
 function useGetters(...args: [any]): Record<string, any> {
   const getters = mapGetters(...args);
   const result: Record<string, any> = {};
-  Object.keys(getters).forEach(key => (result[key] = computed(getters[key])));
+  Object.keys(getters).forEach(key => (result[key] = computed(getters[key]!)));
   return result;
 }
 
@@ -109,7 +113,7 @@ function useMutations(...args: [any]): Record<string, any> {
   const result: Record<string, any> = {};
   const mutations = mapMutations(...args);
   Object.keys(mutations).forEach(
-    key => (result[key] = mutations[key].bind(vm))
+    key => (result[key] = mutations[key]!.bind(vm))
   );
   return result;
 }
@@ -123,6 +127,6 @@ function useActions(...args: [any]): Record<string, any> {
   const vm = getVueInstance();
   const result: Record<string, any> = {};
   const actions = mapActions(...args);
-  Object.keys(actions).forEach(key => (result[key] = actions[key].bind(vm)));
+  Object.keys(actions).forEach(key => (result[key] = actions[key]!.bind(vm)));
   return result;
 }

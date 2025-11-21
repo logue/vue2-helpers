@@ -1,5 +1,7 @@
 import Vuex, { Store, type StoreOptions } from 'vuex';
+
 import { getCurrentInstance, Vue2 } from 'vue-demi';
+
 import { OUT_OF_SCOPE, warn } from './utils';
 
 /** Create Vuex Store */

@@ -1,11 +1,11 @@
 import { getCurrentInstance, Vue2 } from 'vue-demi';
 import Vuetify from 'vuetify/lib';
-import type { Framework, UserVuetifyPreset } from 'vuetify';
-
-import type { Breakpoint } from 'vuetify/types/services/breakpoint';
-import type { Theme } from 'vuetify/types/services/theme';
 
 import { OUT_OF_SCOPE, warn } from './utils';
+
+import type { Framework, UserVuetifyPreset } from 'vuetify';
+import type { Breakpoint } from 'vuetify/types/services/breakpoint';
+import type { Theme } from 'vuetify/types/services/theme';
 
 /** Create Vuetify Instance */
 export function createVuetify(options?: UserVuetifyPreset): Vuetify {

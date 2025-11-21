@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - postinstall-postinstall
+  - unrs-resolver
+  - vue-demi

@@ -1,10 +1,12 @@
-import { effectScope, getCurrentInstance, reactive, Vue2 } from 'vue-demi';
 import VueRouter, {
   type NavigationGuard,
   type Route,
   type RouterOptions as RawRouterOptions,
   type RouteConfig as RouteRecordRaw,
 } from 'vue-router';
+
+import { effectScope, getCurrentInstance, reactive, Vue2 } from 'vue-demi';
+
 import { DEPRECATED_ROUTER, OUT_OF_SCOPE, warn } from './utils';
 
 export type { NavigationGuard, RouteRecordRaw };
