@@ -37,49 +37,37 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.umd.js",
       "import": "./dist/index.es.js",
-      "browser": "./dist/index.es.js",
-      "jsdelivr": "./dist/index.iife.js",
-      "unpkg": "./dist/index.iife.js"
+      "default": "./dist/index.iife.js"
     },
     "./vuex": {
       "types": "./dist/vuex.d.ts",
       "require": "./dist/vuex.umd.js",
       "import": "./dist/vuex.es.js",
-      "browser": "./dist/vuex.es.js",
-      "jsdelivr": "./dist/vuex.iife.js",
-      "unpkg": "./dist/vuex.iife.js"
+      "default": "./dist/vuex.iife.js"
     },
     "./vue-router": {
       "types": "./dist/vue-router.d.ts",
       "require": "./dist/vue-router.umd.js",
       "import": "./dist/vue-router.es.js",
-      "browser": "./dist/vue-router.es.js",
-      "jsdelivr": "./dist/vue-router.iife.js",
-      "unpkg": "./dist/vue-router.iife.js"
+      "default": "./dist/vue-router.iife.js"
     },
     "./vuetify": {
       "types": "./dist/vuetify.d.ts",
       "require": "./dist/vuetify.umd.js",
       "import": "./dist/vuetify.es.js",
-      "browser": "./dist/vuetify.es.js",
-      "jsdelivr": "./dist/vuetify.iife.js",
-      "unpkg": "./dist/vuetify.iife.js"
+      "default": "./dist/vuetify.iife.js"
     },
     "./teleport": {
       "types": "./dist/teleport.d.ts",
       "require": "./dist/teleport.umd.js",
       "import": "./dist/teleport.es.js",
-      "browser": "./dist/teleport.es.js",
-      "jsdelivr": "./dist/teleport.iife.js",
-      "unpkg": "./dist/teleport.iife.js"
+      "default": "./dist/teleport.iife.js"
     },
     "./h-demi": {
       "types": "./dist/h-demi.d.ts",
       "require": "./dist/h-demi.umd.js",
       "import": "./dist/h-demi.es.js",
-      "browser": "./dist/h-demi.es.js",
-      "jsdelivr": "./dist/h-demi.iife.js",
-      "unpkg": "./dist/h-demi.iife.js"
+      "default": "./dist/h-demi.iife.js"
     }
   },
   "files": [
@@ -121,9 +109,6 @@
     },
     "vuetify": {
       "optional": true
-    },
-    "vuex": {
-      "optional": false
     }
   },
   "devDependencies": {
@@ -136,12 +121,12 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-vue": "^10.5.1",
+    "eslint-plugin-vue": "^10.6.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "husky": "^9.1.7",
     "jiti": "^2.6.1",
     "lint-staged": "^16.2.7",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all2": "^8.0.4",
     "patch-package": "^8.0.1",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^3.6.2",
@@ -152,14 +137,9 @@
     "vue": "~2.7.16",
     "vue-router": "~3.6.5",
     "vue-template-compiler": "~2.7.16",
-    "vue-tsc": "^3.1.4",
+    "vue-tsc": "^3.1.5",
     "vuetify": "~2.7.2",
     "vuex": "~3.6.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,ts,json,md}": "eslint --fix --cache --cache-location ./node_modules/.vite/vite-plugin-eslint",
