@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /**
  * h-demi - h function for Vue 2 and 3
  *
